@@ -1,0 +1,26 @@
+# --- Java / Maven (Backend) ---
+backend/target/
+backend/*.jar
+backend/*.war
+backend/*.ear
+backend/.mvn/wrapper/maven-wrapper.jar
+backend/.metadata/
+
+# --- Node / React (Frontend) ---
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/.eslintcache
+
+# --- IDE & OS Specific ---
+.vscode/
+.idea/
+*.swp
+*.DS_Store
+Thumbs.db
+
+# --- CRITICAL: Security & Credentials ---
+serviceAccountKey.json
+backend/src/main/resources/serviceAccountKey.json
+*.pem
