@@ -2,6 +2,7 @@ import { useState, type ChangeEvent, type FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Send } from 'lucide-react';
 
+const API_BASE = import.meta.env.VITE_API_BASE_URL;
 const SubmissionForm = () => {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
@@ -32,7 +33,7 @@ const SubmissionForm = () => {
             tags: tagsArray
         };
 
-        fetch('http://localhost:8080/api/issues', {
+        fetch(`${API_BASE}/api/issues`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

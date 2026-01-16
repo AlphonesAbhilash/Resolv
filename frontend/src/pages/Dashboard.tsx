@@ -3,12 +3,13 @@ import IssueCard from '../components/IssueCard';
 import type { Issue } from '../types';
 import { Search, Filter } from 'lucide-react';
 
+const API_BASE = import.meta.env.VITE_API_BASE_URL;
 const Dashboard = () => {
     const [issues, setIssues] = useState<Issue[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:8080/api/issues')
+        fetch(`${API_BASE}/api/issues`)
             .then(res => res.json())
             .then(data => {
                 setIssues(data);
